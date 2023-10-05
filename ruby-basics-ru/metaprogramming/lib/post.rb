@@ -12,5 +12,3 @@ class Post
   attribute :published, type: :boolean
 end
 
-post = Post.new(id: 123123, title: "123")
-print post.attributes

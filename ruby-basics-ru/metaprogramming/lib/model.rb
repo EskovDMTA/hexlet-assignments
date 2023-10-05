@@ -20,41 +20,39 @@ module Model
         if attribute_type == DateTime
           instance_variable_set("@#{attribute_name}", attribute_type === value ? value : DateTime.parse(value))
         else
-          if options[:default]
-            instance_variable_set("@#{attribute_name}", options[:default])
-          else
-            instance_variable_set("@#{attribute_name}", attribute_type === value ? value : attribute_type.new(value))
-          end
+
+          instance_variable_set("@#{attribute_name}", attribute_type === value ? value : attribute_type.new(value))
         end
       end
+    end
 
-      def from_sym_to_class(sym)
-        if sym == :integer
-          Integer
-        elsif sym == :string
-          String
-        elsif sym == :datetime
-          DateTime
-        end
-      end
-
-      def filter_attributes(attributes)
-        attributes.select { |name| method_defined?("#{name}=") }
+    def from_sym_to_class(sym)
+      if sym == :integer
+        Integer
+      elsif sym == :string
+        String
+      elsif sym == :datetime
+        DateTime
       end
     end
 
-    def initialize(attributes = {})
-      self.class.filter_attributes(attributes).each do |name, value|
-        send("#{name}=", value)
-      end
+    def filter_attributes(attributes)
+      attributes.select { |name| method_defined?("#{name}=") }
     end
-
-    def attributes
-      attr_hash = {}
-      self.class.filter_attributes(instance_variables.each { |name| attr_hash[name[1..-1].to_sym] = instance_variable_get(name) })
-      attr_hash
-    end
-
   end
+
+  def initialize(attributes = {})
+    self.class.filter_attributes(attributes).each do |name, value|
+      send("#{name}=", value)
+    end
+  end
+
+  def attributes
+    attr_hash = {}
+    self.class.filter_attributes(instance_variables.each { |name| attr_hash[name[1..-1].to_sym] = instance_variable_get(name) })
+    attr_hash
+  end
+
 end
+
 # END
