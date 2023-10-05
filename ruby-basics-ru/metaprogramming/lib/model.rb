@@ -10,15 +10,10 @@ module Model
     def attribute(name, options = {})
       attribute_name = name.to_sym
       attribute_type = from_sym_to_class(options[:type]) || Object
-      default_value = options[:default]
 
       define_method(attribute_name) do
         value = instance_variable_get("@#{attribute_name}")
-        if value.nil?
-          value = default_value
-        else
-          value.is_a?(attribute_type) ? value : attribute_type.new(value)
-        end
+        value.is_a?(attribute_type) ? value : attribute_type.new(value)
       end
 
       define_method("#{attribute_name}=") do |value|
