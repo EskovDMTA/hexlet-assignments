@@ -1,0 +1,28 @@
+<ul>
+  <%= link_to "Home", root_path %>>
+</ul>
+<%= if defined?(page_id) && page_id != nil
+      page_id
+    else
+      "About"
+    end %>
+
+<main>
+  <h1>Илона Маскова</h1>
+  <h2>Будущая Rails-звезда! </h2>
+  <hr>
+  <section>
+    <h2>Ключевые навыки:</h2>
+    <ul>
+      <li>Ruby On Rails</li>
+      <li>Ruby</li>
+      <li>JavaScript</li>
+      <li>TS</li>
+      <li>React</li>
+    </ul>
+  </section>
+  <section>
+    <h2>О Обо мне</h2>
+    <p>...</p>
+  </section>
+</main>
