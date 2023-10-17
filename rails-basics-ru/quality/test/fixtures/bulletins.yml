@@ -1,0 +1,11 @@
+bul_1:
+  id: 1
+  title: "Bulletin #1"
+  body: "Bulletin #1 body"
+  published: true
+
+bul_2:
+  id: 2
+  title: "Bulletin #2"
+  body: "Bulletin #2 body"
+  published: true
