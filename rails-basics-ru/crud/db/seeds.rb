@@ -14,6 +14,6 @@
     status: index.to_s,
     creator: Faker::Name.unique.name,
     performer: Faker::Name.unique.name,
-    completed: index.even? ? true : false
+    completed: index.even?
   )
 end

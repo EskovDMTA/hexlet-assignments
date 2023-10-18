@@ -21,7 +21,7 @@ class TestTasksController < ActionDispatch::IntegrationTest
       status: 0.to_s,
       creator: Faker::Name.unique.name,
       performer: Faker::Name.unique.name,
-      completed: 0.even? ? true : false
+      completed: index.even?
     )
     assert_equal(@task.valid?, true)
   end
