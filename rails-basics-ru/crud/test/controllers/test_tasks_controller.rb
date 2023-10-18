@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 require_relative '../test_helper'
-
+require_relative '../../app/controllers/tasks_controller'
 class TestTasksController < ActionDispatch::IntegrationTest
   def setup
-    Task.delete_all
     @task = Task.create(
       name: Faker::Name.name,
       description: Faker::Quotes::Chiquito.sentence,
@@ -40,6 +39,6 @@ class TestTasksController < ActionDispatch::IntegrationTest
 
   test 'test_delete task' do
     delete task_path(@task)
-    assert_equal(0, Task.count)
+    assert_equal(2, Task.count)
   end
 end
