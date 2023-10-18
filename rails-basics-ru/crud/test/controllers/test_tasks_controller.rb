@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative '../test_helper'
 require_relative '../../app/controllers/tasks_controller'
 class TestTasksController < ActionDispatch::IntegrationTest
@@ -10,7 +11,7 @@ class TestTasksController < ActionDispatch::IntegrationTest
       status: 0.to_s,
       creator: Faker::Name.unique.name,
       performer: Faker::Name.unique.name,
-      completed: index.even?
+      completed: 0.even? ? true : false
     )
   end
 
@@ -21,7 +22,7 @@ class TestTasksController < ActionDispatch::IntegrationTest
       status: 0.to_s,
       creator: Faker::Name.unique.name,
       performer: Faker::Name.unique.name,
-      completed: index.even?
+      completed: 0.even? ? true : false
     )
     assert_equal(@task.valid?, true)
   end
