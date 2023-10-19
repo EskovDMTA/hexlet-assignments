@@ -1,0 +1,15 @@
+<%= form_with model: task do |f| %>
+  <div><%=f.label :name %></div>
+  <div><%=f.text_field :name %></div>
+  <div><%=f.label :description %></div>
+  <div><%=f.text_field :description %></div>
+  <div><%=f.label :status %></div>
+  <div><%=f.text_field :status %></div>
+  <div><%=f.label :creator %></div>
+  <div><%=f.text_field :creator %></div>
+  <div><%=f.label :performer %></div>
+  <div><%=f.text_field :performer %></div>
+  <div><%=f.label :completed %></div>
+  <div><%=f.check_box :completed %></div>
+  <div><%=f.submit  %></div>
+<% end %>

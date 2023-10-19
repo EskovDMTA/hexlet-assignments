@@ -1,0 +1,27 @@
+= form_with model: task do |f|
+  div
+    =f.label :name
+  div
+    =f.text_field :name
+  div
+    =f.label :description
+  div
+    =f.text_field :description
+  div
+    =f.label :status
+  div
+    =f.text_field :status
+  div
+    =f.label :creator
+  div
+    =f.text_field :creator
+  div
+    =f.label :performer
+  div
+    =f.text_field :performer
+  div
+    =f.label :completed
+  div
+    =f.check_box :completed
+  div
+    =f.submit
