@@ -1,60 +1,49 @@
-# frozen_string_literal: true
-
 class TasksController < ApplicationController
+  before_action :set_task, only: %i[ show edit update destroy ]
+
   def index
-    @tasks = Task.order(created_at: :desc)
+    @tasks = Task.all
   end
 
-  def show
-    @task = Task.find(params[:id])
-  end
+  def show; end
 
   def new
     @task = Task.new
   end
 
+  def edit; end
+
   def create
     @task = Task.new(task_params)
-
     if @task.save
-      flash[:success] = 'New task created'
-      redirect_to task_path(@task)
+      redirect_to task_url(@task), notice: "Task was successfully created."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @task = Task.find(params[:id])
   end
 
   def update
-    @task = Task.find(params[:id])
-
     if @task.update(task_params)
-      flash[:success] = 'Task updated'
-      redirect_to task_url(@task)
+      redirect_to task_url(@task), notice: "Task was successfully updated."
+
     else
-      flash[:failure] = 'Task cannot be updated'
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
+  # DELETE /tasks/1 or /tasks/1.json
   def destroy
-    @task = Task.find(params[:id])
-
-    if @task.destroy
-      flash[:success] = 'Task was successfully deleted'
-      redirect_to tasks_path
-    else
-      flash[:failure] = 'Task doesnt deleted'
-      redirect_to task_path(@article)
-    end
+    @task.destroy!
+    redirect_to tasks_url, notice: "Task was successfully destroyed."
   end
 
   private
 
+  def set_task
+    @task = Task.find(params[:id])
+  end
+
   def task_params
-    params.required(:task).permit(:name, :description, :status, :creator, :performer, :completed)
+    params.require(:task).permit(:name, :description, :status, :creator, :performer, :completed)
   end
 end

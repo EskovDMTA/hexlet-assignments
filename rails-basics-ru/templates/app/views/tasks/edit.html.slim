@@ -1,3 +1,10 @@
-h3
-  | Update task
-= render partial: "partial/form", locals: {task: @task}
+h1 Editing task
+
+== render "form", task: @task
+
+br
+
+div
+  => link_to "Show this task", @task
+  '|
+  =< link_to "Back to tasks", tasks_path

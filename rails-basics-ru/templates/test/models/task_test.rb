@@ -1,6 +1,6 @@
 require "test_helper"
 
-class TaskControllerTest < ActionDispatch::IntegrationTest
+class TaskTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
