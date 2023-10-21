@@ -2,9 +2,10 @@
   = @user.name
 
 / BEGIN
-
+- @tasks.each do |task|
+  div == task.name
+  hr
 / END
-hr
 
 .d-flex
   = link_to 'Edit', edit_user_path(@user), class: 'btn btn-outline-primary me-2'
