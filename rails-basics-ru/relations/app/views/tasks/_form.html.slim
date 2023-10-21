@@ -1,0 +1,6 @@
+= simple_form_for(task) do |f|
+  = f.input :name, placeholder: 'name'
+  = f.input :description, placeholder: 'add task description'
+  = f.input :status_id, placeholder: 'select status value', collection: Status.all
+  = f.input :user_id, placeholder: 'select user', collection: User.all
+  = f.button :submit, class: 'btn btn-success mt-4 btn-block'
