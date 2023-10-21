@@ -1,5 +1,0 @@
-Style/Documentation:
-  Enabled: False
-
-Metrics/BlockLength:
-  Max: 300
