@@ -1,0 +1,9 @@
+= content_for :title do
+  = 'Editing post'
+
+= render partial: "posts/shared/comment_form", locals: {comment: @comment, url: comment_path}
+
+hr
+
+.d-flex
+  = link_to 'Back', :back, class: 'btn btn-outline-primary'
