@@ -1,0 +1,5 @@
+= simple_form_for @post do |f|
+  = f.input :title, label: t('title_label'), placeholder: t('title_label'), error: t('activerecord.errors.models.post.attributes.title.blank')
+  = f.input :body, label: t('body_label')
+
+  = f.button :submit, value: t('new_posts'), class: 'btn btn-success mt-4 btn-block'

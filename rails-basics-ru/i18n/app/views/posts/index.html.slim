@@ -1,6 +1,6 @@
 - content_for :title do
   / page title (h1)
-  h1 = (:title)
+  h1 =t('posts.posts')
   / BEGIN
 
   / END
@@ -20,18 +20,11 @@ table.table.table-striped.table-hover.mb-5
         th{ scope = 'row' } = i + 1
         td = post.title
         td = t('posts.index', count: post.comments.count)
-          / comments count
-          / BEGIN
 
-          / END
         td.d-flex
-          / posts links
-          / BEGIN
-          = link_to t('posts.show.title'), post_path(id: post), class: 'nav-link link-dark'
-          / END
-
+          = link_to t('posts.show.title'), post_path(post), class: 'nav-link link-dark'
 / new post link
 = link_to new_post_path, id: 'new-post-link', class: 'btn btn-primary' do
   / BEGIN
-  = t('new_post')
+  = t('posts.new')
   / END

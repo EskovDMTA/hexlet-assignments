@@ -1,7 +1,11 @@
 en:
   "home_page": "Home page"
+  "home": "Home"
   "hexlet":
     "hexlet_title": "© Hexlet, 2022"
-    "hexlet_logo": "Hexlet logo"
   "posts": "Posts"
-  "new_posts": "New post"
+  "new_posts": "Create Post"
+  "title_label": "Enter post title"
+  "body_label": "Enter post body"
+  "hexlet_logo": "Hexlet logo"
+

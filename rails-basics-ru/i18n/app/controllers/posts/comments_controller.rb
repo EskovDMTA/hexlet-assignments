@@ -11,7 +11,7 @@ class Posts::CommentsController < Posts::ApplicationController
     @comment = @resource_post.comments.build(comment_params)
 
     if @comment.save
-      redirect_to @resource_post, notice: t('.success')
+      redirect_to @resource_post, notice: t('comments.create.success')
     else
       redirect_to @resource_post
     end
@@ -22,7 +22,7 @@ class Posts::CommentsController < Posts::ApplicationController
     @comment = Post::Comment.find params[:id]
 
     if @comment.update(comment_params)
-      redirect_to @resource_post, notice: t('.success')
+      redirect_to @resource_post, notice: t('comments.update.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class Posts::CommentsController < Posts::ApplicationController
 
     @comment.destroy
 
-    redirect_to @resource_post
+    redirect_to @resource_post, notice: t('posts.destroy.success')
   end
 
   private

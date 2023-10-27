@@ -3,11 +3,11 @@
 Rails.application.routes.draw do
   # BEGIN
   # http://example.com/en/posts
+  root to: "home#index"
+  scope (':locale'), locale: /ru|en/ do
 
-  scope (':locale'), locale = /ru|en/ do
-    root to: "home#index"
     resources :posts do
-      scope module: "posts" do
+      scope module: :posts do
         resources :comments
       end
     end

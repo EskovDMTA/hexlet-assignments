@@ -2,15 +2,14 @@ ru:
   activerecord:
     models:
       # BEGIN
-      
+
       # END
       post/comment: Комментарий
 
     attributes:
-      post:
-        # BEGIN
-        
-        # END
+      # BEGIN
+
+      # END
       post/comment:
         body: Содержание
 
@@ -18,6 +17,8 @@ ru:
       models:
         post:
           attributes:
-            # BEGIN
-            
-            # END
+            title:
+              blank: Название Должно быть заполнено
+            body:
+              blank: Тело Должно быть заполнено
+

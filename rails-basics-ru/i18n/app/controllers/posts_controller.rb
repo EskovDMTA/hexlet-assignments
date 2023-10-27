@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to @post, notice: t('.success')
+      redirect_to @post, notice: t('posts.create.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
 
     if @post.update(post_params)
-      redirect_to @post, notice: t('.success')
+      redirect_to @post, notice: t('posts.update.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
     @post.destroy
 
-    redirect_to posts_url, notice: t('.success')
+    redirect_to posts_url, notice: t('posts.destroy.success')
   end
 
   private

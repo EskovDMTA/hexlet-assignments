@@ -1,12 +1,12 @@
 ru:
   posts:
+    body: Тело поста
     posts: "Посты"
     index:
-      no_comments: "нет комментариев"
       one: "1 комментарий"
       few: "%{count} комментария"
       many: "%{count} комментариев"
-
+      other: "%{count} комментариев"
     edit:
       title: Изменить пост.
 
@@ -19,6 +19,11 @@ ru:
     update:
       success: Пост обновлен.
 
+    destroy:
+      success: Пост удален.
+
+    new: Новый пост
+
     # BEGIN
 
     # END
@@ -26,12 +31,6 @@ ru:
   comments:
 
     "comments": "Комментарии"
-
-    edit:
-      title: Изменить комментарий
-
-    show:
-      title: Показать комментарий
 
     create:
       success: Комментарий создан.

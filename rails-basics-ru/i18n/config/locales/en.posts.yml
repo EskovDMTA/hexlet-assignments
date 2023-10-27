@@ -1,7 +1,7 @@
 en:
   posts:
+    body: Post body
     index:
-      no_comments: "No comments."
       one: "1 comment."
       other: "%{count} comments"
     posts: Posts
@@ -13,10 +13,15 @@ en:
       title: Show post.
 
     create:
-      success: Post created.
+      success: Post was created.
 
     update:
-      success: Post updated.
+      success: Post was updated.
+
+    destroy:
+      success: Post was destroyed.
+
+    new: New Post
 
     # BEGIN
 
@@ -25,11 +30,6 @@ en:
   comments:
     comments: Comments
 
-    edit:
-      title: Editing comment.
-
-    show:
-      title: Show comment.
 
     create:
       success: Comment was created.
