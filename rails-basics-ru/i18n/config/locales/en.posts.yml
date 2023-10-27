@@ -1,0 +1,38 @@
+en:
+  posts:
+    index:
+      no_comments: "No comments."
+      one: "1 comment."
+      other: "%{count} comments"
+    posts: Posts
+
+    edit:
+      title: Change post.
+
+    show:
+      title: Show post.
+
+    create:
+      success: Post created.
+
+    update:
+      success: Post updated.
+
+    # BEGIN
+
+    # END
+
+  comments:
+    comments: Comments
+
+    edit:
+      title: Editing comment.
+
+    show:
+      title: Show comment.
+
+    create:
+      success: Comment was created.
+
+    update:
+      success: Comment was updated.
