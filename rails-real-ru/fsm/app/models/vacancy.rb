@@ -9,7 +9,8 @@ class Vacancy < ApplicationRecord
   # BEGIN
   aasm do
     state :on_moderate, initial: true
-    state :published, :archived
+    state :published
+    state :archived
 
     event :publish do
       transitions from: :on_moderate, to: :published

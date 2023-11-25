@@ -2,6 +2,7 @@
 
 class VacanciesController < ApplicationController
   before_action :get_vacancy, only: %i[archive publish]
+
   def index
     @on_moderate = Vacancy.on_moderate
     @published = Vacancy.published
@@ -28,7 +29,9 @@ class VacanciesController < ApplicationController
   end
 
   def publish
-    @vacancy.publish!
+    if @vacancy.may_publish?
+      @vacancy.publish!
+    end
     redirect_to vacancies_path, notice: 'Vacancy was successfully published.'
   end
 
