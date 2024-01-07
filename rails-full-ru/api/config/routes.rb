@@ -3,9 +3,10 @@
 Rails.application.routes.draw do
   scope module: :web do
     root 'home#index'
+    resources :users
   end
 
-  namespace :api, as: '' do
+  namespace :api  do
     resources :users, only: %i[index show]
   end
 end
