@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     root 'home#index'
   end
 
-  moun RailsStats::Engine => '/stats'
+  mount RailsStats::Engine => '/stats'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
